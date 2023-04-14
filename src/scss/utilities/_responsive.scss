@@ -1,0 +1,16 @@
+//Responsive Mixins
+//Usage ex: @use '../utilities/responsive';
+//@include responsive.max( size ) { ... }
+//@include responsive.min( size ) { ... }
+
+@mixin max($breakpoint: 480px) {
+    @media screen and ( max-width: $breakpoint ) {
+        @content;
+    }
+}
+
+@mixin min($breakpoint: 1600px) {
+    @media screen and ( min-width: $breakpoint ) {
+        @content;
+    }
+}

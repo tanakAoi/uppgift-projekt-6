@@ -1,0 +1,19 @@
+@mixin default(
+    $background: var(--color-dark), 
+    $color: var(--color-light), 
+    $hover-background: var(--color-accent), 
+    $hover-color: var(--color-light)) {
+    background-color: $background;
+    color: $color;
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+        background-color: $hover-background;
+        color: $hover-color;
+    }
+}
