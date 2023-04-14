@@ -1,0 +1,14 @@
+.site-header,
+.hero,
+.promo,
+.news,
+.second-promo,
+.opening-hours,
+.site-footer {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+    }
+}
