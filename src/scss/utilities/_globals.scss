@@ -63,15 +63,15 @@
 
     --line-height: 1.5;
 
-    --font-scale: 1.5;
-    --font-size: 1.125rem;
+    --font-scale: 1.4;
+    --font-size: 1.125rem; // 18px
 
-    --font-size-1: var(--font-size);
-    --font-size-2: calc( var(--font-size-1) * var(--font-scale) );
-    --font-size-3: calc( var(--font-size-2) * var(--font-scale) );
-    --font-size-4: calc( var(--font-size-3) * var(--font-scale) );
-    --font-size-5: calc( var(--font-size-4) * var(--font-scale) );
-    --font-size-6: calc( var(--font-size-5) * var(--font-scale) );
+    --font-size-1: var(--font-size);  // 18px
+    --font-size-2: calc( var(--font-size-1) * var(--font-scale) ); // 25.2px
+    --font-size-3: calc( var(--font-size-2) * var(--font-scale) ); // 35.3px
+    --font-size-4: calc( var(--font-size-3) * var(--font-scale) ); // 49.4px
+    --font-size-5: calc( var(--font-size-4) * var(--font-scale) ); // 69.1px
+    --font-size-6: calc( var(--font-size-5) * var(--font-scale) ); // 96.8px
 
     --page-inner: 80rem;
     --grid-container: [full-start] minmax(5rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(5rem, 1fr) [full-end];
