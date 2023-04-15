@@ -38,6 +38,7 @@ p {
 a {
     color: var(--color-dark);
     text-decoration: none;
+    
     &:hover {
         color: var(--color-accent);
     }
@@ -49,4 +50,8 @@ li {
     font-family: var(--font-sans);
     line-height: var(--line-height);
     list-style: none;
+}
+
+span {
+    font-family: var(--font-sans);
 }

@@ -1,15 +1,17 @@
 .site-header {
-    min-height: 150px; // temp
+    min-height: 150px;
+    width: 100%;
     position: fixed;
     z-index: 99;
-
+    
     &__inner {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__logo {
+        
     }
 }
 
@@ -22,6 +24,7 @@
         margin: 0;
         padding: 0;
         display: flex;
+        justify-content: flex-end;
         gap: var(--gap-m);
         font-style: oblique;
         color: var(--color-light);
