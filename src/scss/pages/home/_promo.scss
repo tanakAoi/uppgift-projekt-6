@@ -1,6 +1,5 @@
 .promo {
     padding-top: var(--gap-xl);
-    padding-bottom: var(--gap-xl); //temp
 
     &__inner {
         display: flex;
@@ -26,11 +25,11 @@
         &--dark {
             background-color: var(--color-dark-101);
 
-            h4 {
+            h5 {
                 color: var(--color-light-200);
             }
 
-            h2 {
+            h3 {
                 color: var(--color-light);
             }
 
@@ -40,21 +39,21 @@
         }
 
         &--orange {
-            h4 {
+            h5 {
                 color: var(--color-dark-101);
             }
 
-            h2 {
+            h3 {
                 color: var(--color-secondary);
             }
         }
 
         &--light {
-            h4 {
+            h5 {
                 color: var(--color-dark-301);
             }
 
-            h2 {
+            h3 {
                 color: var(--color-dark-101);
             }
         }

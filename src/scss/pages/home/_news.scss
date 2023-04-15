@@ -1,0 +1,120 @@
+@use '../../components/buttons' as button;
+
+.news {
+    padding-top: var(--gap-xl);
+    min-height: 100vh; // temp
+
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-xl);
+        
+    }
+
+    &__title {
+        color: var(--color-dark-101);
+    }
+    
+    &__content {
+        display: flex;
+        gap: 6rem;
+    }
+
+    &__articles {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-xl);
+    }
+}
+
+.article {
+    max-width: 47.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__date {
+        color: var(--color-dark-202);
+        font-family: var(--font-serif);
+    }
+
+    &__title {
+        padding-top: 0.5rem;
+        color: var(--color-dark-101);
+    }
+
+    &__image {
+        padding: 1rem 0;
+    }
+
+    &__text {
+        max-width: 22.5rem;
+        width: 100%;
+        color: var(--color-dark-102);
+        font-weight: 500;
+    }
+
+    &__buttons {
+        padding-top: 1rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &--large {
+
+        .article__title {
+            padding-top: 0.8rem;
+        }
+
+        .article__image {
+            padding: 2rem 0;
+        }
+
+        .article__text {
+            max-width: 47.5rem;
+            width: 100%;
+        }
+
+        .article__buttons {
+            padding-top: 2rem;
+            gap: var(--gap-s);
+        }
+
+        .button__readmore {
+            @include button.default(
+            $font-size: 1.8rem,
+            $padding: 0.6rem 1.2rem
+            );
+        }
+
+        .button__share {
+            @include button.default(
+                $background: transparent,
+                $color: var(--color-dark-101),
+                $hover-background: transparent,
+                $hover-color: var(--color-dark-401),
+                $font-size: 1.8rem,
+                $padding: 0.6rem 1.2rem
+            );
+        }
+    }
+}
+
+.button__readmore {
+    @include button.default(
+        $font-size: 1.6rem,
+        $padding: 0.5rem 1rem
+    );
+}
+
+.button__share {
+    @include button.default(
+        $background: transparent,
+        $color: var(--color-dark-101),
+        $hover-background: transparent,
+        $hover-color: var(--color-dark-401),
+        $font-size: 1.6rem,
+        $padding: 0.5rem 1rem
+    );
+}

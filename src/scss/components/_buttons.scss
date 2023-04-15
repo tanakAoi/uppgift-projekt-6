@@ -2,14 +2,17 @@
     $background: var(--color-secondary), 
     $color: var(--color-light), 
     $hover-background: var(--color-secondary-700), 
-    $hover-color: var(--color-light)) {
+    $hover-color: var(--color-light),
+    $padding: 0.8rem 1.5rem,
+    $font-size: 2rem
+    ) {
     background-color: $background;
     color: $color;
-    padding: 0.8rem 1.5rem;
+    padding: $padding;
     border: 0;
     border-radius: 0;
     transform: skewX(-10deg);
-    font-size: 2rem;
+    font-size: $font-size;
     font-family: var(--font-sans);
     display: inline-block;
     text-decoration: none;
