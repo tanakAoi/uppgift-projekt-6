@@ -1,5 +1,5 @@
 :root {
-  --section-gap: 8rem;
+  --section-gap: 6rem;
   --section-gap-inner: calc( var(--section-gap) * 0.75 );
   --gap-xl: 4rem;
   --gap-l: 3rem;
@@ -12,9 +12,10 @@
   --color-dark-301:hsl(207, 14%, 49%);
   --color-dark-401:hsl(207, 14%, 59%);
   --color-dark-501:hsl(207, 14%, 69%);
-  --color-dark-601:hsl(207, 14%, 79%);
+  --color-dark-601:rgb(194, 202, 209);
   --color-dark-701:hsl(207, 14%, 89%);
-  --color-dark-801:hsl(207, 14%, 99%);
+  --color-dark-801:hsl(207, 14%, 94%);
+  --color-dark-901:hsl(207, 14%, 99%);
   --color-dark-102:hsl(206, 20%, 33%);
   --color-dark-202:hsl(206, 20%, 43%);
   --color-dark-302:hsl(206, 20%, 53%);
@@ -83,6 +84,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+  font-weight: 400;
+  font-style: oblique;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
@@ -110,6 +115,7 @@ h6 {
 }
 
 p {
+  margin: 0;
   line-height: var(--line-height);
 }
 
@@ -243,8 +249,6 @@ span {
   margin: 0;
   padding: 0;
   color: var(--color-light);
-  font-style: oblique;
-  font-weight: 400;
 }
 .hero__buttons {
   display: flex;
@@ -296,6 +300,68 @@ span {
   display: flex;
   align-items: center;
   gap: var(--gap-s);
+}
+
+.promo {
+  padding-top: var(--gap-xl);
+  padding-bottom: var(--gap-xl);
+}
+.promo__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap-m);
+}
+.promo__card {
+  max-width: 25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-dark-801);
+  padding: 2.5rem 3rem;
+  position: relative;
+}
+.promo__card p {
+  font-size: 12px;
+}
+.promo__card--dark {
+  background-color: var(--color-dark-101);
+}
+.promo__card--dark h4 {
+  color: var(--color-light-200);
+}
+.promo__card--dark h2 {
+  color: var(--color-light);
+}
+.promo__card--dark p {
+  color: var(--color-light-500);
+}
+.promo__card--orange h4 {
+  color: var(--color-dark-101);
+}
+.promo__card--orange h2 {
+  color: var(--color-secondary);
+}
+.promo__card--light h4 {
+  color: var(--color-dark-301);
+}
+.promo__card--light h2 {
+  color: var(--color-dark-101);
+}
+
+.triangle,
+.arrow-right {
+  position: absolute;
+}
+
+.triangle {
+  bottom: 0;
+  right: 0;
+}
+
+.arrow-right {
+  bottom: 1rem;
+  right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
