@@ -188,6 +188,24 @@ span {
   font-style: oblique;
   color: var(--color-light);
 }
+.header-menu__link {
+  position: relative;
+}
+.header-menu__link::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 3px;
+  width: 100%;
+  bottom: -5px;
+  left: -1px;
+  background-color: var(--color-secondary);
+  transform: scale(0, 1);
+  transition: transform 0.2s;
+}
+.header-menu__link:hover::after {
+  transform: scale(1, 1);
+}
 
 .menu-button {
   position: relative;
