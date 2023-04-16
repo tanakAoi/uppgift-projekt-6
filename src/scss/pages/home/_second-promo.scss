@@ -8,8 +8,9 @@
     }
     
     &__card {
-        background: url("src/scss/assets/images/promo@2x.jpg");
+        background-image: url("src/scss/assets/images/promo@2x.jpg");
         background-size: cover;
+        background-position: center;
         position: relative;
         max-width: var(--page-inner);
         width: 100%;

@@ -1,7 +1,7 @@
 @use '../../components/buttons' as button;
 
 .hero {
-    background: url("src/scss/assets/images/hero-background@2x.jpg");
+    background-image: url("src/scss/assets/images/hero-background@2x.jpg");
     background-size: cover;
     min-height: 100vh;
 
