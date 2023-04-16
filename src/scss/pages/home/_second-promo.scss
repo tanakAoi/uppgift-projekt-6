@@ -1,0 +1,36 @@
+@use '../../components/details';
+
+.second-promo {
+    padding-top: var(--gap-xl);
+    padding-bottom: var(--gap-xl);
+
+    &__inner {
+        
+    }
+    
+    &__card {
+        background: url("src/scss/assets/images/promo@2x.jpg");
+        background-size: cover;
+        position: relative;
+        max-width: var(--page-inner);
+        width: 100%;
+        
+    }
+
+    &__text {
+        padding: 7rem 3rem 5rem 3rem;
+    }
+
+    &__main-text {
+        color: var(--color-light);
+        font-size: 5rem;
+    }
+
+    &__subtext {
+        color: var(--color-light-200)
+    }
+}
+
+.icon-readmore {
+    @include details.arrow-right();
+}

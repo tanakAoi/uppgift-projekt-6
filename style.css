@@ -511,4 +511,42 @@ span {
   color: var(--color-dark-401);
 }
 
+.second-promo {
+  padding-top: var(--gap-xl);
+  padding-bottom: var(--gap-xl);
+}
+.second-promo__card {
+  background: url("src/scss/assets/images/promo@2x.jpg");
+  background-size: cover;
+  position: relative;
+  max-width: var(--page-inner);
+  width: 100%;
+}
+.second-promo__text {
+  padding: 7rem 3rem 5rem 3rem;
+}
+.second-promo__main-text {
+  color: var(--color-light);
+  font-size: 5rem;
+}
+.second-promo__subtext {
+  color: var(--color-light-200);
+}
+
+.icon-readmore .triangle,
+.icon-readmore .arrow-right {
+  position: absolute;
+}
+.icon-readmore .triangle {
+  bottom: 0;
+  right: 0;
+}
+.icon-readmore .triangle path {
+  fill: var(--color-primary);
+}
+.icon-readmore .arrow-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
