@@ -12,7 +12,7 @@
   --color-dark-301:hsl(207, 14%, 49%);
   --color-dark-401:hsl(207, 14%, 59%);
   --color-dark-501:hsl(207, 14%, 69%);
-  --color-dark-601:rgb(194, 202, 209);
+  --color-dark-601:hsl(208, 14%, 79%);
   --color-dark-701:hsl(207, 14%, 89%);
   --color-dark-801:hsl(207, 14%, 94%);
   --color-dark-901:hsl(207, 14%, 99%);
@@ -348,17 +348,33 @@ span {
   color: var(--color-dark-101);
 }
 
-.triangle,
-.arrow-right {
+.icon-readmore .triangle,
+.icon-readmore .arrow-right {
   position: absolute;
 }
-
-.triangle {
+.icon-readmore .triangle {
   bottom: 0;
   right: 0;
 }
-
-.arrow-right {
+.icon-readmore .triangle path {
+  fill: var(--color-primary);
+}
+.icon-readmore .arrow-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+.icon-readmore--gray .triangle,
+.icon-readmore--gray .arrow-right {
+  position: absolute;
+}
+.icon-readmore--gray .triangle {
+  bottom: 0;
+  right: 0;
+}
+.icon-readmore--gray .triangle path {
+  fill: var(--color-dark-601);
+}
+.icon-readmore--gray .arrow-right {
   bottom: 1rem;
   right: 1rem;
 }
@@ -415,6 +431,7 @@ span {
 }
 .article--large .article__title {
   padding-top: 0.8rem;
+  font-size: 5rem;
 }
 .article--large .article__image {
   padding: 2rem 0;

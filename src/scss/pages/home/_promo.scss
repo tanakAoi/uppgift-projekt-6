@@ -1,3 +1,5 @@
+@use '../../components/details';
+
 .promo {
     padding-top: var(--gap-xl);
 
@@ -60,17 +62,11 @@
     }
 }
 
-.triangle,
-.arrow-right {
-    position: absolute;
-}
-
-.triangle {
-    bottom: 0;
-    right: 0;
-}
-
-.arrow-right {
-    bottom: 1rem;
-    right: 1rem;
+.icon-readmore {
+    @include details.arrow-right();
+    
+    &--gray {
+        @include details.arrow-right($fill: var(--color-dark-601));
+    }
+    
 }

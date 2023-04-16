@@ -1,0 +1,23 @@
+@mixin arrow-right(
+    $fill: var(--color-primary)
+) {
+
+    .triangle,
+    .arrow-right {
+        position: absolute;
+    }
+
+    .triangle {
+        bottom: 0;
+        right: 0;
+
+        path {
+            fill: $fill;
+        }
+    }
+
+    .arrow-right {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
