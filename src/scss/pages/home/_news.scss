@@ -12,10 +12,6 @@
         
     }
 
-    &__title {
-        color: var(--color-dark-101);
-    }
-    
     &__content {
         display: flex;
         gap: 6rem;
@@ -41,7 +37,6 @@
 
     &__title {
         padding-top: 0.5rem;
-        color: var(--color-dark-101);
     }
 
     &__image {
