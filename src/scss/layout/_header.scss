@@ -2,7 +2,7 @@
     min-height: 150px;
     width: 100%;
     position: fixed;
-    z-index: 99;
+    z-index: 999;
     
     &__inner {
         display: flex;
@@ -11,6 +11,11 @@
     }
 
     &__logo {
+
+        &:hover {
+            opacity: 0.6;
+            transition: all 0.2s;
+        }
         
     }
 }
@@ -28,6 +33,10 @@
         gap: var(--gap-m);
         font-style: oblique;
         color: var(--color-light);
+
+        &--invisible {
+            display: none;
+        }
     }
 
     &__link {
@@ -71,22 +80,49 @@
         background-color: var(--color-light);
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(0);
+        transform-origin: left top;
+        transition: transform 0.2s;
 
         &::before,
         &::after {
             content: '';
             display: block;
             position: absolute;
-            height: 2px;
+            height: 1.5px;
             width: 100%;
             background-color: var(--color-light);
             top: -8px;
         }
 
-        &::after {
-            top: 8px;
+        &::before {
+            transform: rotate(0deg);
+            transition: top 0.2s transform 0.2s 0.2s;
         }
 
+        &::after {
+            top: 8px;
+            transition: width 0.2s 0.2s;
+        }
+        
+    }
+
+    &--close {
+
+        .menu-button__hamburger {
+            transform: rotate(45deg) translate(-50%, -50%);
+            transition: transform 0.2s 0.2s;
+
+            &::before {
+                top: 0;
+                transform: rotate(90deg);
+                transition: top 0.2s, transform 0.2s 0.2s;
+            }
+
+            &::after {
+                width: 0;
+                transition: width 0.2s;
+            }
+        }
     }
 }
