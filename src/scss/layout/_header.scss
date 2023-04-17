@@ -3,6 +3,11 @@
     width: 100%;
     position: fixed;
     z-index: 999;
+
+    &--scroll {
+        background-color: rgba(67, 86, 101, 0.9);
+        min-height: 80px;
+    }
     
     &__inner {
         display: flex;
