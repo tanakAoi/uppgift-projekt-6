@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://use.typekit.net/zdt3uxc.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="style.css">
-    <script src="src/js/menu.js" defer></script>
+    <script src="src/js/collapsibleContent.js" defer></script>
+    <script src="src/js/headerMenu.js" defer></script>
+    <script src="src/js/headerScroll.js" defer></script>
 </head>
 <body>
 
     <div class="container">
 
         <!-- Site Header -->
-        <header class="site-header">
+        <header class="site-header site-header--scroll">
             <div class="site-header__inner">
 
                 <a href="index.html" class="site-header__logo">
@@ -46,12 +48,13 @@
         <nav class="site-menu">
             <div class="site-menu__inner">
 
+                <button class="menu-button site-menu__button">
+                    <div class="menu-button__hamburger"></div>
+                </button>
+
                 <ul class="site-menu__list">
                     <li class="site-menu__item"><a href="" class="site-menu__link">HEM</a></li>
-                    <li class="site-menu__item"><a href="" class="site-menu__link">TRÄNING
-                        <span class="material-symbols-outlined">
-                            expand_more
-                        </span>
+                    <li class="site-menu__item"><a href="" class="site-menu__link collapsible-content__link">TRÄNING
                         <ul class="training-menu">
                             <li class="site-menu__item"><a href="" class="site-menu__link">Personlig Träning</a></li>
                             <li class="site-menu__item"><a href="" class="site-menu__link">Grupp Träning</a></li>
@@ -118,6 +121,7 @@
             <div class="promo__inner">
 
                 <div class="promo__card promo__card--dark">
+                    <a href="" class="promo__link"></a>
                     <h5>TRÄNA FRÅN</h5>
                     <h3>479kr/mån*</h3>
                     <p>* Gäller ungdom/Pensionär autogiro</p>
@@ -136,6 +140,7 @@
                       
                 </div>
                 <div class="promo__card promo__card--orange">
+                    <a href="" class="promo__link"></a>
                     <h5>SE VÅRT UTBUD av</h5>
                     <h3>GRUPPTRÄNING</h3>
                     <div class="icon-readmore--gray">
@@ -152,6 +157,7 @@
                     </div>
                 </div>
                 <div class="promo__card promo__card--light">
+                    <a href="" class="promo__link"></a>
                     <h5>SUGEN PÅ ATT BÖRJA TRÄNA?</h5>
                     <h3>PROVA GRATIS!</h3>
                     <div class="icon-readmore--gray">

@@ -5,8 +5,13 @@
     z-index: 999;
 
     &--scroll {
-        background-color: rgba(67, 86, 101, 0.9);
+        background-color: rgba(43, 49, 53, 0.5);
         min-height: 80px;
+        transition: all 0.5s;
+
+        .site-header__logo {
+            transform: scale(0.7);
+        }
     }
     
     &__inner {
@@ -38,9 +43,13 @@
         gap: var(--gap-m);
         font-style: oblique;
         color: var(--color-light);
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.2s 0.2s;
 
         &--invisible {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
         }
     }
 

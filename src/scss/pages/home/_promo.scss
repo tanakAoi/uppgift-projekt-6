@@ -19,6 +19,12 @@
         background-color: var(--color-dark-801);
         padding: 2.5rem 3rem;
         position: relative;
+        transform: scale(1);
+        transition: all 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         p {
             font-size: 12px;
@@ -60,6 +66,15 @@
             }
         }
     }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
 }
 
 .icon-readmore {
