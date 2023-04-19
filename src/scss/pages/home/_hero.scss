@@ -46,7 +46,6 @@
 
     &__button {
         @include button.default();
-        transition: all 0.2s;
 
         &--blue  {
             @include button.default(

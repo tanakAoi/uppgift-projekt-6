@@ -16,6 +16,7 @@
     font-family: var(--font-sans);
     display: inline-block;
     text-decoration: none;
+    transition: all 0.2s;
     &:hover {
         background-color: $hover-background;
         color: $hover-color;

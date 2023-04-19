@@ -38,6 +38,11 @@
             color: var(--color-light);
             font-family: var(--font-serif);
             font-size: var(--font-size-1);
+            transition: all 0.2s;
+
+            &:hover {
+                color: var(--color-light-500);
+            }
         }
     } 
 
@@ -55,6 +60,14 @@
         color: var(--color-light-600);
     }
 
+}
+
+.minfriskvard {
+    transition: all 0.2s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 }
 
 #map {

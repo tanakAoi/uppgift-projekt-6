@@ -2,14 +2,11 @@
 
 .news {
     padding-top: var(--gap-xl);
-    min-height: 100vh; // temp
-
 
     &__inner {
         display: flex;
         flex-direction: column;
         gap: var(--gap-xl);
-        
     }
 
     &__content {
@@ -100,7 +97,7 @@
 .button__readmore {
     @include button.default(
         $font-size: 1.6rem,
-        $padding: 0.5rem 1rem
+        $padding: 0.5rem 1rem,
     );
 }
 

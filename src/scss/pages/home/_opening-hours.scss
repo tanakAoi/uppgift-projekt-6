@@ -2,7 +2,8 @@
 @use '../../components/details';
 
 .opening-hours {
-    padding-top: var(--gap-xl);
+    padding-top: calc( var(--gap-xl) + 80px );
+    margin-top: -80px;
     
     &__inner {
         display: flex;

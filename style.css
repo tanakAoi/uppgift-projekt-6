@@ -68,6 +68,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -200,13 +204,6 @@ span {
   gap: var(--gap-m);
   font-style: oblique;
   color: var(--color-light);
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.2s 0.2s;
-}
-.header-menu__list--invisible {
-  opacity: 0;
-  visibility: hidden;
 }
 .header-menu__link {
   position: relative;
@@ -280,12 +277,12 @@ span {
 }
 
 .site-menu {
+  margin-top: 150px;
   position: fixed;
   z-index: 99;
-  background-color: rgb(67, 86, 101);
+  background-color: rgba(67, 86, 101, 0.8);
   max-width: 40rem;
   width: 100%;
-  height: 100vh;
   top: 0;
   right: -40rem;
   transition: all 0.8s;
@@ -361,6 +358,10 @@ span {
   color: var(--color-light);
   font-family: var(--font-serif);
   font-size: var(--font-size-1);
+  transition: all 0.2s;
+}
+.site-footer__menu li:hover {
+  color: var(--color-light-500);
 }
 .site-footer__icon {
   max-width: 16rem;
@@ -373,6 +374,13 @@ span {
 .site-footer__copyright {
   padding-bottom: 2rem;
   color: var(--color-light-600);
+}
+
+.minfriskvard {
+  transition: all 0.2s;
+}
+.minfriskvard:hover {
+  transform: translateY(-5px);
 }
 
 #map {
@@ -450,6 +458,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .hero__button--blue:hover {
   background-color: var(--color-primary-700);
@@ -486,7 +495,8 @@ span {
 }
 
 .promo {
-  padding-top: var(--gap-xl);
+  padding-top: calc(var(--gap-xl) + 150px);
+  margin-top: -150px;
 }
 .promo__inner {
   display: flex;
@@ -507,6 +517,7 @@ span {
 }
 .promo__card:hover {
   transform: scale(1.1);
+  opacity: 0.8;
 }
 .promo__card p {
   font-size: 12px;
@@ -541,6 +552,7 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 9;
 }
 
 .icon-readmore .triangle,
@@ -576,7 +588,6 @@ span {
 
 .news {
   padding-top: var(--gap-xl);
-  min-height: 100vh;
 }
 .news__inner {
   display: flex;
@@ -646,6 +657,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .article--large .button__readmore:hover {
   background-color: var(--color-secondary-700);
@@ -662,6 +674,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .article--large .button__share:hover {
   background-color: transparent;
@@ -679,6 +692,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .button__readmore:hover {
   background-color: var(--color-secondary-700);
@@ -696,6 +710,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .button__share:hover {
   background-color: transparent;
@@ -712,6 +727,18 @@ span {
   position: relative;
   max-width: var(--page-inner);
   width: 100%;
+  transition: all 0.3s;
+}
+.second-promo__card:hover {
+  opacity: 0.9;
+}
+.second-promo__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
 }
 .second-promo__text {
   padding: 7rem 3rem 5rem 3rem;
@@ -741,7 +768,8 @@ span {
 }
 
 .opening-hours {
-  padding-top: var(--gap-xl);
+  padding-top: calc(var(--gap-xl) + 80px);
+  margin-top: -80px;
 }
 .opening-hours__inner {
   display: flex;
@@ -772,6 +800,7 @@ span {
   font-family: var(--font-sans);
   display: inline-block;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .opening-hours__button:hover {
   background-color: var(--color-secondary-700);

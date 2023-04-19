@@ -43,14 +43,6 @@
         gap: var(--gap-m);
         font-style: oblique;
         color: var(--color-light);
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.2s 0.2s;
-
-        &--invisible {
-            opacity: 0;
-            visibility: hidden;
-        }
     }
 
     &__link {

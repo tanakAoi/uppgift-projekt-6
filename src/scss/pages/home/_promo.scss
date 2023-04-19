@@ -1,7 +1,8 @@
 @use '../../components/details';
 
 .promo {
-    padding-top: var(--gap-xl);
+    padding-top: calc( var(--gap-xl) + 150px );
+    margin-top: -150px;
 
     &__inner {
         display: flex;
@@ -24,6 +25,7 @@
 
         &:hover {
             transform: scale(1.1);
+            opacity: 0.8;
         }
 
         p {
@@ -73,6 +75,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 9;
     }
 
 }
