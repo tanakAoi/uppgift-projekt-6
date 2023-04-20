@@ -5,8 +5,8 @@
     z-index: 999;
 
     &--scroll {
-        background-color: rgba(43, 49, 53, 0.5);
         min-height: 80px;
+        background-color: rgba(43, 49, 53, 0.7);
         transition: all 0.5s;
 
         .site-header__logo {
@@ -67,67 +67,68 @@
             }
         }
     }
-}
 
-.menu-button {
-    position: relative;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    padding: 0;
-    margin: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    &__button {
+        position: relative;
+        border: 0;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+        margin: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 9999;
 
-    &__hamburger {
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        background-color: var(--color-light);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(0);
-        transform-origin: left top;
-        transition: transform 0.2s;
-
-        &::before,
-        &::after {
-            content: '';
-            display: block;
+        .hamburger {
             position: absolute;
-            height: 1.5px;
+            height: 2px;
             width: 100%;
             background-color: var(--color-light);
-            top: -8px;
-        }
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            transform-origin: left top;
+            transition: transform 0.2s;
 
-        &::before {
-            transform: rotate(0deg);
-            transition: top 0.2s transform 0.2s 0.2s;
-        }
-
-        &::after {
-            top: 8px;
-            transition: width 0.2s 0.2s;
-        }
-        
-    }
-
-    &--close {
-
-        .menu-button__hamburger {
-            transform: rotate(45deg) translate(-50%, -50%);
-            transition: transform 0.2s 0.2s;
+            &::before,
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 1.5px;
+                width: 100%;
+                background-color: var(--color-light);
+                top: -8px;
+            }
 
             &::before {
-                top: 0;
-                transform: rotate(90deg);
-                transition: top 0.2s, transform 0.2s 0.2s;
+                transform: rotate(0deg);
+                transition: top 0.2s transform 0.2s 0.2s;
             }
 
             &::after {
-                width: 0;
-                transition: width 0.2s;
+                top: 8px;
+                transition: width 0.2s 0.2s;
+            }
+            
+        }
+
+        &--close {
+
+            .hamburger {
+                transform: rotate(45deg) translate(-50%, -50%);
+                transition: transform 0.2s 0.2s;
+
+                &::before {
+                    top: 0;
+                    transform: rotate(90deg);
+                    transition: top 0.2s, transform 0.2s 0.2s;
+                }
+
+                &::after {
+                    width: 0;
+                    transition: width 0.2s;
+                }
             }
         }
     }

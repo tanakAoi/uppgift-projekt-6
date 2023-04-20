@@ -8,7 +8,6 @@
         display: flex;
         justify-content: space-between;
         gap: var(--gap-m);
-
     }
 
     &__card {
@@ -25,7 +24,6 @@
 
         &:hover {
             transform: scale(1.1);
-            opacity: 0.8;
         }
 
         p {

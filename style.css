@@ -174,8 +174,8 @@ span {
   z-index: 999;
 }
 .site-header--scroll {
-  background-color: rgba(43, 49, 53, 0.5);
   min-height: 80px;
+  background-color: rgba(43, 49, 53, 0.7);
   transition: all 0.5s;
 }
 .site-header--scroll .site-header__logo {
@@ -223,8 +223,7 @@ span {
 .header-menu__link:hover::after {
   transform: scale(1, 1);
 }
-
-.menu-button {
+.header-menu__button {
   position: relative;
   border: 0;
   border-radius: 0;
@@ -233,8 +232,9 @@ span {
   margin: 0;
   width: 1.5rem;
   height: 1.5rem;
+  z-index: 9999;
 }
-.menu-button__hamburger {
+.header-menu__button .hamburger {
   position: absolute;
   height: 2px;
   width: 100%;
@@ -245,7 +245,7 @@ span {
   transform-origin: left top;
   transition: transform 0.2s;
 }
-.menu-button__hamburger::before, .menu-button__hamburger::after {
+.header-menu__button .hamburger::before, .header-menu__button .hamburger::after {
   content: "";
   display: block;
   position: absolute;
@@ -254,55 +254,60 @@ span {
   background-color: var(--color-light);
   top: -8px;
 }
-.menu-button__hamburger::before {
+.header-menu__button .hamburger::before {
   transform: rotate(0deg);
   transition: top 0.2s transform 0.2s 0.2s;
 }
-.menu-button__hamburger::after {
+.header-menu__button .hamburger::after {
   top: 8px;
   transition: width 0.2s 0.2s;
 }
-.menu-button--close .menu-button__hamburger {
+.header-menu__button--close .hamburger {
   transform: rotate(45deg) translate(-50%, -50%);
   transition: transform 0.2s 0.2s;
 }
-.menu-button--close .menu-button__hamburger::before {
+.header-menu__button--close .hamburger::before {
   top: 0;
   transform: rotate(90deg);
   transition: top 0.2s, transform 0.2s 0.2s;
 }
-.menu-button--close .menu-button__hamburger::after {
+.header-menu__button--close .hamburger::after {
   width: 0;
   transition: width 0.2s;
 }
 
-.site-menu {
-  margin-top: 150px;
+.side-menu {
+  padding-top: var(--gap-l);
   position: fixed;
   z-index: 99;
-  background-color: rgba(67, 86, 101, 0.8);
-  max-width: 40rem;
-  width: 100%;
+  background-color: rgba(67, 86, 101, 0.7);
+  backdrop-filter: blur(15px);
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  right: -40rem;
-  transition: all 0.8s;
-}
-.site-menu--visible {
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
 }
-.site-menu__button {
-  display: none;
+.side-menu--visible {
+  opacity: 1;
+  visibility: visible;
 }
-.site-menu__list {
+.side-menu__inner {
+  display: flex;
+  flex-direction: column;
+}
+.side-menu__list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--gap-s);
 }
-.site-menu__item {
+.side-menu__item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -436,6 +441,7 @@ span {
   padding: 0.8rem 1.5rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 2rem;
   font-family: var(--font-sans);
@@ -447,12 +453,27 @@ span {
   background-color: var(--color-secondary-700);
   color: var(--color-light);
 }
+.hero__button::before {
+  content: "";
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -10%;
+  left: -180%;
+  transition: all 0.3s ease-in-out;
+}
+.hero__button:hover::before {
+  left: 60%;
+}
 .hero__button--blue {
   background-color: var(--color-primary);
   color: var(--color-light);
   padding: 0.8rem 1.5rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 2rem;
   font-family: var(--font-sans);
@@ -517,7 +538,6 @@ span {
 }
 .promo__card:hover {
   transform: scale(1.1);
-  opacity: 0.8;
 }
 .promo__card p {
   font-size: 12px;
@@ -652,6 +672,7 @@ span {
   padding: 0.6rem 1.2rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 1.8rem;
   font-family: var(--font-sans);
@@ -669,6 +690,7 @@ span {
   padding: 0.6rem 1.2rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 1.8rem;
   font-family: var(--font-sans);
@@ -687,6 +709,7 @@ span {
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 1.6rem;
   font-family: var(--font-sans);
@@ -705,6 +728,7 @@ span {
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: 1.6rem;
   font-family: var(--font-sans);
@@ -795,6 +819,7 @@ span {
   padding: 0.5rem 1.5rem;
   border: 0;
   border-radius: 0;
+  overflow: hidden;
   transform: skewX(-10deg);
   font-size: var(--font-size-3);
   font-family: var(--font-sans);

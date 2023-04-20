@@ -1,15 +1,13 @@
 const siteMenu = () => {
 
     // Get elements from DOM
-    const menuButton = document.querySelector('.menu-button')
-    // const headerMenuList = document.querySelector('.header-menu__list')
-    const siteMenu = document.querySelector('.site-menu')
+    const menuButton = document.querySelector('.header-menu__button')
+    const sideMenu = document.querySelector('.side-menu')
 
     // Toggle header menu
     const toggleHeaderMenu = () => {
-        menuButton.classList.toggle('menu-button--close')
-        // headerMenuList.classList.toggle('header-menu__list--invisible')
-        siteMenu.classList.toggle('site-menu--visible')
+        menuButton.classList.toggle('header-menu__button--close')
+        sideMenu.classList.toggle('side-menu--visible')
     }
     
     // Create Events

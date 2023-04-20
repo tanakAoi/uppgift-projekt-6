@@ -46,7 +46,23 @@
 
     &__button {
         @include button.default();
-
+          
+        &::before {
+        content: "";
+        width: 150%;
+        height: 150%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(-45deg);
+        position: absolute;
+        top: -10%;
+        left: -180%;
+        transition: all 0.3s ease-in-out;
+        }
+        
+        &:hover::before {
+        left: 60%;
+        }
+          
         &--blue  {
             @include button.default(
                 $background: var(--color-primary),

@@ -11,6 +11,7 @@
     padding: $padding;
     border: 0;
     border-radius: 0;
+    overflow: hidden;
     transform: skewX(-10deg);
     font-size: $font-size;
     font-family: var(--font-sans);
