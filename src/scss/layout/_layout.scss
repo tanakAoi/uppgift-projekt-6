@@ -1,3 +1,5 @@
+@use '../utilities/responsive';
+
 .site-header,
 .hero,
 .promo,
@@ -10,5 +12,9 @@
 
     &__inner {
         grid-column: inner;
+    }
+
+    @include responsive.max(50rem) {
+        grid-template-columns:  [full-start] minmax(2rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(2rem, 1fr) [full-end];
     }
 }

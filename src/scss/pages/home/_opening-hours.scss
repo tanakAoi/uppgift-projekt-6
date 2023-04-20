@@ -1,5 +1,6 @@
 @use '../../components/buttons' as button;
 @use '../../components/details';
+@use '../../utilities/responsive';
 
 .opening-hours {
     padding-top: calc( var(--gap-xl) + 80px );
@@ -16,6 +17,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+             
+        @include responsive.max(40rem) {
+            justify-content: center;
+        }
     }
 
     &__title {
@@ -33,12 +38,21 @@
             $padding: 0.5rem 1.5rem,
             $font-size: var(--font-size-3)
         );
+        
+        @include responsive.max(40rem) {
+            display: none;
+        }
     }
 
     &__tables {
         display: flex;
         justify-content: space-between;
-        gap: 3.5rem;
+        gap: clamp(1rem, -8.7059rem + 14.1176vw, 4rem);
+
+        @include responsive.max(62.5rem) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
@@ -48,18 +62,27 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1.8rem;
+    padding: 2rem 0 2rem 1.8rem;
 
-    &:last-of-type {
-        padding-left: 0;
-        padding-right: 0;
+    @include responsive.max(62.5rem) {
+        padding: 2rem 1.8rem;
+        max-width: 80%;
+    }
+
+    @include responsive.max(30rem) {
+        max-width: 100%;
     }
 
     &--dark {
         background-color: var(--color-dark-102);
+        padding: 2rem 1.8rem;
+        
 
         .table__title {
             color: var(--color-light);
+        }
+
+        .table__list {
         }
 
         .table__items {
@@ -126,7 +149,7 @@
     
     &__item {
         font-family: var(--font-serif);
-        font-size: var(--font-size-1);
+        font-size: clamp(1rem, 0.5956rem + 0.5882vw, 1.125rem);
         color: var(--color-light-600);
 
         &:first-of-type {
