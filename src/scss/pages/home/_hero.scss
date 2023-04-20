@@ -1,8 +1,10 @@
 @use '../../components/buttons' as button;
+@use '../../utilities/responsive';
 
 .hero {
     background-image: url("src/scss/assets/images/hero-background@2x.jpg");
     background-size: cover;
+    background-position: center;
     min-height: 100vh;
 
     &__inner {
@@ -30,18 +32,35 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: var(--gap-xl);
+        
+        @include responsive.max(50rem) {
+            align-items: center;
+        }
     }
 
     &__title {
         margin: 0;
         padding: 0;
         color: var(--color-light);
+
+        @include responsive.max(50rem) {
+            font-size: 5.5rem;
+        }
+
+        @include responsive.max(30rem) {
+            font-size: 5rem;
+        }
     }
 
     &__buttons {
         display: flex;
         gap: 1.5rem;
+        
+        @include responsive.max(50rem) {
+            justify-content: center;
+        }
     }
 
     &__button {
@@ -66,7 +85,12 @@
         &--blue  {
             @include button.default(
                 $background: var(--color-primary),
-                $hover-background: var(--color-primary-700));
+                $hover-background: var(--color-primary-700)
+            );
+        }
+
+        @include responsive.max(30rem) {
+            font-size: 1.3rem;
         }
     }
     

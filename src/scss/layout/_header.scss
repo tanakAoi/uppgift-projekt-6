@@ -1,17 +1,24 @@
+@use '../utilities/responsive';
+
 .site-header {
-    min-height: 150px;
+    height: 150px;
     width: 100%;
     position: fixed;
     z-index: 999;
-
+    
     &--scroll {
-        min-height: 80px;
+        height: 99px;
         background-color: rgba(43, 49, 53, 0.7);
         transition: all 0.5s;
-
+        
         .site-header__logo {
-            transform: scale(0.7);
+            transform: scale(0.8);
         }
+
+    @include responsive.max(50rem) {
+        background-color: rgba(43, 49, 53, 1);
+    }
+
     }
     
     &__inner {
@@ -21,12 +28,15 @@
     }
 
     &__logo {
-
+    
         &:hover {
             opacity: 0.6;
             transition: all 0.2s;
         }
         
+        @include responsive.max(50rem) {
+            transform: scale(0.8);
+        }
     }
 }
 
@@ -43,6 +53,10 @@
         gap: var(--gap-m);
         font-style: oblique;
         color: var(--color-light);
+
+        @include responsive.max(50rem) {
+            display: none;
+        }
     }
 
     &__link {

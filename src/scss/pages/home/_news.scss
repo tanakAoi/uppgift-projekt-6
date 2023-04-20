@@ -1,4 +1,5 @@
 @use '../../components/buttons' as button;
+@use '../../utilities/responsive';
 
 .news {
     padding-top: var(--gap-xl);
@@ -12,12 +13,25 @@
     &__content {
         display: flex;
         gap: 6rem;
+
+        @include responsive.max(62.5rem) {
+            flex-direction: column;
+        }
     }
 
     &__articles {
         display: flex;
         flex-direction: column;
         gap: var(--gap-xl);
+        
+        @include responsive.max(62.5rem) {
+            gap: 6rem;
+        }
+        
+        @include responsive.max(30rem) {
+            gap: 4rem;
+        }
+
     }
 }
 
@@ -34,6 +48,14 @@
 
     &__title {
         padding-top: 0.5rem;
+
+        @include responsive.max(62.5rem) {
+            font-size: clamp(3.125rem, -1.875rem + 10vw, 4.375rem);
+        }
+
+        @include responsive.max(30rem) {
+            font-size: var(--font-size-3);
+        }
     }
 
     &__image {
@@ -43,21 +65,50 @@
     &__text {
         max-width: 22.5rem;
         width: 100%;
+        line-height: 1.8em;
+        height: 3.6em;
+        overflow: hidden;
         color: var(--color-dark-102);
+        font-size: clamp(1rem, 0.5956rem + 0.5882vw, 1.125rem);
         font-weight: 500;
+
+        @include responsive.max(62.5rem) {
+            max-width: 47.5rem;
+            height: 100%;
+        }
+
+        @include responsive.max(30rem) {
+            display: none;
+        }
     }
 
     &__buttons {
         padding-top: 1rem;
         display: flex;
         gap: 0.5rem;
+        
+        @include responsive.max(62.5rem) {
+            padding-top: 2rem;
+        }
+        
+        @include responsive.max(30rem) {
+            padding-top: 0;
+        }
     }
 
     &--large {
 
         .article__title {
             padding-top: 0.8rem;
-            font-size: 5rem;
+            font-size: clamp(3.5rem, 2.5rem + 4vw, 4.5rem);
+
+            @include responsive.max(62.5rem) {
+                font-size: clamp(3.125rem, -1.875rem + 10vw, 4.375rem);
+            }
+            
+            @include responsive.max(30rem) {
+                font-size: var(--font-size-3);
+            }
         }
 
         .article__image {
@@ -67,11 +118,20 @@
         .article__text {
             max-width: 47.5rem;
             width: 100%;
+            height: 7.2em;
         }
 
         .article__buttons {
             padding-top: 2rem;
             gap: var(--gap-s);
+            
+            @include responsive.max(62.5rem) {
+                gap: 0.5rem;
+            }
+            
+            @include responsive.max(30rem) {
+            padding-top: 0;
+            }
         }
 
         .button__readmore {
@@ -99,6 +159,13 @@
         $font-size: 1.6rem,
         $padding: 0.5rem 1rem,
     );
+
+    @include responsive.max(62.5rem) {
+        @include button.default(
+            $font-size: 1.8rem,
+            $padding: 0.6rem 1.2rem
+            );
+    }
 }
 
 .button__share {
@@ -110,4 +177,15 @@
         $font-size: 1.6rem,
         $padding: 0.5rem 1rem
     );
+    
+    @include responsive.max(62.5rem) {
+        @include button.default(
+            $background: transparent,
+            $color: var(--color-dark-101),
+            $hover-background: transparent,
+            $hover-color: var(--color-dark-401),
+            $font-size: 1.8rem,
+            $padding: 0.6rem 1.2rem
+            );
+    }
 }

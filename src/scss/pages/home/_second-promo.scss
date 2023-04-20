@@ -1,4 +1,5 @@
 @use '../../components/details';
+@use '../../utilities/responsive';
 
 .second-promo {
     padding-top: var(--gap-xl);
@@ -17,6 +18,7 @@
         transition: all 0.3s;
 
         &:hover {
+            transform: scale(1.1);
             opacity: 0.9;
         }
     }
@@ -32,15 +34,20 @@
 
     &__text {
         padding: 7rem 3rem 5rem 3rem;
+        
+        @include responsive.max(50rem) {
+            padding: 4rem 3rem;
+        }
     }
 
     &__main-text {
         color: var(--color-light);
-        font-size: 5rem;
+        font-size: clamp(3rem, 2.2308rem + 3.0769vw, 5rem);
     }
 
     &__subtext {
-        color: var(--color-light-200)
+        color: var(--color-light-200);
+        font-size: clamp(1.5rem, 1.2115rem + 1.1538vw, 2.25rem);
     }
 }
 
