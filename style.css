@@ -174,6 +174,17 @@ span {
   .second-promo,
   .opening-hours,
   .site-footer {
+    grid-template-columns: [full-start] minmax(3rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(3rem, 1fr) [full-end];
+  }
+}
+@media screen and (max-width: 30rem) {
+  .site-header,
+  .hero,
+  .promo,
+  .news,
+  .second-promo,
+  .opening-hours,
+  .site-footer {
     grid-template-columns: [full-start] minmax(2rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(2rem, 1fr) [full-end];
   }
 }
@@ -341,6 +352,9 @@ span {
   font-size: var(--font-size-3);
   color: var(--color-light);
 }
+.side-menu__item:hover {
+  color: var(--color-secondary-700);
+}
 .training-menu {
   visibility: hidden;
   opacity: 0;
@@ -485,6 +499,11 @@ span {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 30rem) {
+  .hero__footer {
+    display: none;
+  }
+}
 .hero__content {
   max-width: 40rem;
   width: 100%;
@@ -548,11 +567,11 @@ span {
   transform: rotate(-45deg);
   position: absolute;
   top: -10%;
-  left: -180%;
+  left: -150%;
   transition: all 0.3s ease-in-out;
 }
 .hero__button:hover::before {
-  left: 60%;
+  left: 80%;
 }
 .hero__button--blue {
   background-color: var(--color-primary);
@@ -833,6 +852,11 @@ span {
 .article--large .article__image {
   padding: 2rem 0;
 }
+@media screen and (max-width: 30rem) {
+  .article--large .article__image {
+    padding: 1rem 0;
+  }
+}
 .article--large .article__text {
   max-width: 47.5rem;
   width: 100%;
@@ -971,17 +995,25 @@ span {
   padding-top: var(--gap-xl);
 }
 .second-promo__card {
-  background-image: url("src/scss/assets/images/promo@2x.jpg");
-  background-size: cover;
-  background-position: center;
   position: relative;
   max-width: var(--page-inner);
   width: 100%;
+  overflow: hidden;
+}
+.second-promo__card::after {
+  content: "";
+  background-image: url("src/scss/assets/images/promo@2x.jpg");
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
   transition: all 0.3s;
 }
-.second-promo__card:hover {
+.second-promo__card:hover::after {
   transform: scale(1.1);
-  opacity: 0.9;
 }
 .second-promo__link {
   position: absolute;
@@ -989,10 +1021,12 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9;
+  z-index: 10;
 }
 .second-promo__text {
   padding: 7rem 3rem 5rem 3rem;
+  position: relative;
+  z-index: 9;
 }
 @media screen and (max-width: 50rem) {
   .second-promo__text {
@@ -1008,18 +1042,22 @@ span {
   font-size: clamp(1.5rem, 1.2115rem + 1.1538vw, 2.25rem);
 }
 
-.icon-readmore .triangle,
-.icon-readmore .arrow-right {
+.icon-readmore--second {
+  position: relative;
+  z-index: 9;
+}
+.icon-readmore--second .triangle,
+.icon-readmore--second .arrow-right {
   position: absolute;
 }
-.icon-readmore .triangle {
+.icon-readmore--second .triangle {
   bottom: 0;
   right: 0;
 }
-.icon-readmore .triangle path {
+.icon-readmore--second .triangle path {
   fill: var(--color-primary);
 }
-.icon-readmore .arrow-right {
+.icon-readmore--second .arrow-right {
   bottom: 1rem;
   right: 1rem;
 }
@@ -1096,8 +1134,11 @@ span {
 }
 @media screen and (max-width: 62.5rem) {
   .table {
-    padding: 2rem 1.8rem;
     max-width: 80%;
+    padding: 2rem 1.8rem;
+  }
+  .table:last-of-type {
+    padding-top: 0;
   }
 }
 @media screen and (max-width: 30rem) {

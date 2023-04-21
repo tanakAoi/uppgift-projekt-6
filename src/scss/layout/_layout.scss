@@ -15,6 +15,10 @@
     }
 
     @include responsive.max(50rem) {
+        grid-template-columns:  [full-start] minmax(3rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(3rem, 1fr) [full-end];
+    }
+
+    @include responsive.max(30rem) {
         grid-template-columns:  [full-start] minmax(2rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(2rem, 1fr) [full-end];
     }
 }

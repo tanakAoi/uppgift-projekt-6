@@ -113,6 +113,10 @@
 
         .article__image {
             padding: 2rem 0;
+
+            @include responsive.max(30rem) {
+                padding: 1rem 0;
+            }
         }
 
         .article__text {

@@ -65,8 +65,12 @@
     padding: 2rem 0 2rem 1.8rem;
 
     @include responsive.max(62.5rem) {
-        padding: 2rem 1.8rem;
         max-width: 80%;
+        padding: 2rem 1.8rem;
+        
+        &:last-of-type {
+            padding-top: 0;
+        }
     }
 
     @include responsive.max(30rem) {
